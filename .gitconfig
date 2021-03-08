@@ -1,0 +1,7 @@
+[core]
+  editor = nvim
+[user]
+  name = Claudio Bernardes
+  email = bernardes.claudio@gmail.com
+[github]
+	user = obsidienne
