@@ -15,8 +15,7 @@ Plug 'scrooloose/nerdtree',            { 'on':  ['NERDTreeToggle', 'NERDTreeFind
 Plug 'tpope/vim-projectionist'
 Plug 'andyl/vim-projectionist-elixir', { 'for': 'elixir' }
 Plug 'vim-airline/vim-airline'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 

@@ -5,7 +5,7 @@
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
-set smartindent
+set smartindent        
 
 set hidden
 
@@ -29,3 +29,9 @@ set cursorline " turn on row highlighting where cursor is
 " Set gutters
 set number " for number
 set signcolumn=yes " for linting
+
+set list
+set lcs=tab:»_,trail:·
+highlight ExtraWhitespace ctermfg=green guifg=orange 
+match ExtraWhitespace /\s\+$/
+

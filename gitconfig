@@ -5,3 +5,5 @@
   email = bernardes.claudio@gmail.com
 [github]
   user = obsidienne
+[pull]
+	rebase = false
