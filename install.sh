@@ -16,6 +16,8 @@ ln -sf $PWD/tool-versions ~/.tool-versions
 SYMLINKS+=('.tool-versions')
 ln -sf $PWD/config/nvim ~/.config/nvim
 SYMLINKS+=('.gitconfig')
+ln -sf $PWD/condarc ~/.condarc
+SYMLINKS+=('.condarc')
 
 
 echo ${SYMLINKS[@]}
