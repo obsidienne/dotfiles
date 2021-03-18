@@ -16,6 +16,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'andyl/vim-projectionist-elixir', { 'for': 'elixir' }
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
