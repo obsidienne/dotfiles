@@ -10,13 +10,13 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
-Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-projectionist'
-Plug 'andyl/vim-projectionist-elixir', { 'for': 'elixir' }
+Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'preservim/nerdcommenter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
@@ -88,24 +88,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 
-"""""""""""""""""""""""""""""""""""""""""""
-" ALE
-let g:ale_lint_on_text_changed = 'never' " only lint on save
-let g:ale_lint_on_insert_leave = 0 " again, only lint on save
-
-let g:ale_linters = {}
-let g:ale_linters.elixir = ['elixir-ls', 'credo']
-
-let g:ale_elixir_elixir_ls_release = expand("/Users/claudio/Development/elixir-ls/rel")
-let g:ale_elixir_elixir_ls_config = {'elixirLS': {'dialyzerEnabled': v:false}}
-
-let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
-let g:ale_fixers.elixir = ['mix_format']
-
-set completeopt=menu,menuone,preview,noselect,noinsert
-let g:ale_completion_enabled = 1
-
-
 
 """""""""""""""""""""""""""""""""""""""""""
 " NERDTree
@@ -118,7 +100,8 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-" Start NERDTree when Vim is started without file arguments.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
+" Start NERDTree when Vim starts with a directory argument.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
+    \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
