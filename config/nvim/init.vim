@@ -17,6 +17,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-test/vim-test'
 
 call plug#end()
 
@@ -87,6 +88,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 
+
+"""""""""""""""""""""""""""""""""""""""""""
+" vim-test
+let test#strategy = "neovim"
 
 
 """""""""""""""""""""""""""""""""""""""""""
