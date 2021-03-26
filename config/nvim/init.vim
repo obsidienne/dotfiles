@@ -80,6 +80,7 @@ colorscheme gruvbox
 " 'a' - the directory of the current file, unless it is a subdirectory of the cwd
 " 'r' - the nearest ancestor of the current file that contains one of these directories or files: .git .hg .svn .bzr _darcs
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard']
 
 
 """""""""""""""""""""""""""""""""""""""""""
